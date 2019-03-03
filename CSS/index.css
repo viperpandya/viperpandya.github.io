@@ -1,4 +1,5 @@
 body{
+    overflow: hidden;
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -9,7 +10,6 @@ body{
     background-image: linear-gradient(to bottom right, #0e00f5 , #009ef5, #0e00f5);
 }
 .bdy{
-    border: 1px solid black;
     position: absolute;
     height: 44%;
     width: 500px;
@@ -64,12 +64,29 @@ object{
 .two:hover{
     transform: rotate(0deg) scale(1.3);
 }
+.vid{
+    width: 50%;
+    height: 47%;
+    position: absolute;
+    top: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
 @media only screen and (max-width: 600px){
+    .vid{
+        border: 1px solid black;
+        width: 90%;
+        height: 30%;;
+        margin-bottom: 150px;
+    }
     body{
         margin: 0;
         padding: 0;
         position: relative;
-        height: 700px;
+        height: 730px;
     }
 
     .bdy{
