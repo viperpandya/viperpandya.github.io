@@ -15,6 +15,7 @@ particlesJS('particles-js',
   
   {
     "particles": {
+      "nb":80,
       "number": {
         "value": 100,
         "density": {
@@ -92,7 +93,11 @@ particlesJS('particles-js',
           "enable": true,
           "mode": "push"
         },
-        "resize": true
+        "onresize":{
+          "enable":true,
+          "density_auto":true,
+          "density_area":400
+        }
       },
       "modes": {
         "grab": {
