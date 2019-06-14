@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>mobiForge Web share API Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>mobiForge Web Share API demo</h1>
+  <div class="share-container">
+    <button class="share-btn">Share</button>
+    <div id="msg"></div>
+  </div>
+<script>
+  const shareBtn = document.querySelector('.share-btn');
+
+shareBtn.addEventListener('click', () => {
+  if (navigator.share) {
+    navigator.share({
+      title: 'My awesome post!',
+      text: 'This post may or may not contain the answer to the universe',
+      url: document.querySelector('link[rel=canonical]') &&
+            document.querySelector('link[rel=canonical]').href ||
+            window.location.href
+    }).then(() => {
+      console.log('Thanks for sharing!');
+      document.getElementById("msg").innerHTML = 'sharing';
+    })
+    .catch(err => {
+      console.log(`Couldn't share because of`, err.message);
+      document.getElementById("msg").innerHTML = 'sharing';
+    });
+  } else {
+    console.log('web share not supported');
+    document.getElementById("msg").innerHTML = 'Not supported...';
+  }
+});
+</script>
+</body>
+</html>
